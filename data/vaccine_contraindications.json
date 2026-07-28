@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "ten_bo_du_lieu": "Chống chỉ định, tạm hoãn và quy tắc xung đột giữa các vắc xin",
+    "phien_ban": "2026.07",
+    "ngay_crawl": "2026-07-28",
+    "can_cu_phap_ly": [
+      {
+        "so_hieu": "Quyết định 1575/QĐ-BYT",
+        "ngay_ban_hanh": "2023-03-27",
+        "noi_dung": "Hướng dẫn khám sàng lọc trước tiêm chủng đối với trẻ em. Thay thế Quyết định 2470/QĐ-BYT ngày 14/6/2019.",
+        "url": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Quyet-dinh-1575-QD-BYT-2023-Huong-dan-kham-sang-loc-truoc-tiem-chung-tre-em-560859.aspx"
+      }
+    ],
+    "disclaimer": "CHỈ BÁC SĨ KHÁM SÀNG LỌC MỚI ĐƯỢC KẾT LUẬN TRẺ CÓ TIÊM ĐƯỢC HAY KHÔNG. Agent tuyệt đối không được tự kết luận 'trẻ tiêm được' - chỉ được liệt kê cảnh báo và chuyển hướng tới cơ sở tiêm chủng.",
+    "luu_y_du_lieu": "thuvienphapluat.vn / luatminhkhue.vn / ksbtdanang.vn trả HTTP 403 khi crawl. Nội dung dưới đây tổng hợp từ bản đăng lại của bsgdtphcm.vn, bacgiang.gov.vn và Vinmec. Cần đối chiếu bản gốc Quyết định 1575/QĐ-BYT trước khi dùng ngoài phạm vi bài Lab."
+  },
+
+  "chong_chi_dinh": {
+    "mo_ta": "CHỐNG CHỈ ĐỊNH = tuyệt đối không tiêm. Khác với TẠM HOÃN (hoãn rồi tiêm sau).",
+    "tre_tren_1_thang_tuoi": [
+      {
+        "ma": "CCD_01",
+        "noi_dung": "Tiền sử sốc hoặc phản ứng nặng sau tiêm chủng vắc xin lần trước (cùng thành phần)",
+        "dau_hieu_nhan_biet": [
+          "Sốt cao trên 39°C kèm co giật",
+          "Dấu hiệu não / màng não",
+          "Tím tái",
+          "Khó thở"
+        ],
+        "pham_vi": "Vắc xin có cùng thành phần với lần tiêm gây phản ứng",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "CCD_02",
+        "noi_dung": "Suy giảm miễn dịch",
+        "chi_tiet": [
+          "Suy giảm miễn dịch bẩm sinh",
+          "HIV giai đoạn lâm sàng IV",
+          "Suy giảm miễn dịch nặng"
+        ],
+        "pham_vi": "Chống chỉ định với TẤT CẢ vắc xin sống giảm độc lực (BCG, OPV, Sởi, MR, MMR, Thủy đậu, Rota, Imojev)",
+        "vaccine_bi_cam": ["BCG", "OPV", "Soi", "MR", "MMR", "Thuy_dau", "Rota", "VNNB_song"],
+        "ghi_chu": "Vắc xin bất hoạt vẫn tiêm được bình thường.",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "CCD_03",
+        "noi_dung": "Dị ứng nghiêm trọng (phản vệ) với bất kỳ thành phần nào của vắc xin",
+        "pham_vi": "Vắc xin chứa thành phần gây dị ứng",
+        "nguon": "QĐ 1575/QĐ-BYT + Vinmec"
+      },
+      {
+        "ma": "CCD_04",
+        "noi_dung": "Các chống chỉ định khác theo hướng dẫn của nhà sản xuất đối với từng loại vắc xin",
+        "pham_vi": "Theo tờ hướng dẫn sử dụng từng sản phẩm",
+        "ghi_chu": "Đây là điều khoản mở - luôn phải đọc tờ hướng dẫn của lô vắc xin cụ thể.",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      }
+    ],
+    "tre_so_sinh": [
+      {
+        "ma": "CCD_SS_01",
+        "noi_dung": "Không tiêm vắc xin BCG cho trẻ sinh ra từ mẹ nhiễm HIV mà mẹ không được điều trị dự phòng tốt lây truyền từ mẹ sang con",
+        "vaccine_bi_cam": ["BCG"],
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "CCD_SS_02",
+        "noi_dung": "Các chống chỉ định khác theo hướng dẫn của nhà sản xuất",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      }
+    ]
+  },
+
+  "tam_hoan": {
+    "mo_ta": "TẠM HOÃN = hoãn mũi tiêm, tiêm lại khi tình trạng sức khỏe ổn định. Không phải bỏ mũi.",
+    "danh_muc": [
+      {
+        "ma": "TH_01",
+        "noi_dung": "Trẻ mắc các bệnh cấp tính, đặc biệt là các bệnh nhiễm trùng",
+        "dieu_kien_tiem_lai": "Khi khỏi bệnh, sức khỏe ổn định",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "TH_02",
+        "noi_dung": "Sốt ≥ 37,5°C hoặc hạ thân nhiệt ≤ 35,5°C (đo nách)",
+        "nguong": { "sot_tren": 37.5, "ha_than_nhiet_duoi": 35.5, "don_vi": "°C" },
+        "dieu_kien_tiem_lai": "Khi thân nhiệt về bình thường",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "TH_03",
+        "noi_dung": "Suy chức năng các cơ quan: suy hô hấp, suy tuần hoàn, suy tim, suy thận, suy gan, hôn mê",
+        "dieu_kien_tiem_lai": "Khi chức năng cơ quan hồi phục, có ý kiến bác sĩ chuyên khoa",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "TH_04",
+        "noi_dung": "Cân nặng dưới 2000g",
+        "nguong": { "can_nang_duoi_gram": 2000 },
+        "dieu_kien_tiem_lai": "Khi trẻ đạt cân nặng ≥ 2000g. Trường hợp mẹ HBsAg(+) cần cân nhắc riêng cho vắc xin viêm gan B (tiêm kèm HBIG).",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "TH_05",
+        "noi_dung": "Đã dùng các sản phẩm globulin miễn dịch (immunoglobulin) trong vòng 3 tháng, trừ kháng huyết thanh viêm gan B",
+        "pham_vi": "Hoãn các vắc xin SỐNG giảm độc lực",
+        "thoi_gian_hoan_thang": 3,
+        "vaccine_anh_huong": ["Soi", "MR", "MMR", "Thuy_dau", "VNNB_song", "OPV", "Rota", "BCG"],
+        "nguon": "QĐ 1575/QĐ-BYT + Vinmec"
+      },
+      {
+        "ma": "TH_06",
+        "noi_dung": "Đang hoặc mới kết thúc đợt điều trị corticoid liều cao (toàn thân) trong vòng 14 ngày",
+        "thoi_gian_hoan_ngay": 14,
+        "pham_vi": "Chủ yếu với vắc xin sống giảm độc lực",
+        "nguon": "QĐ 1575/QĐ-BYT + Vinmec"
+      },
+      {
+        "ma": "TH_07",
+        "noi_dung": "Có phản ứng tăng dần sau các lần tiêm chủng trước của cùng loại vắc xin",
+        "dieu_kien_tiem_lai": "Cần khám sàng lọc tại bệnh viện",
+        "nguon": "QĐ 1575/QĐ-BYT"
+      },
+      {
+        "ma": "TH_08",
+        "noi_dung": "Mắc các bệnh tim bẩm sinh, bệnh phổi, bệnh tiêu hóa bẩm sinh hoặc mạn tính chưa ổn định",
+        "dieu_kien_tiem_lai": "Chuyển khám sàng lọc tại bệnh viện, cần ý kiến bác sĩ chuyên khoa",
+        "nguon": "QĐ 1575/QĐ-BYT + Vinmec"
+      },
+      {
+        "ma": "TH_09",
+        "noi_dung": "Vàng da sơ sinh có mức bilirubin > 7 mg/dL (cả vàng da bệnh lý và sinh lý)",
+        "nguong": { "bilirubin_tren_mg_dl": 7 },
+        "dieu_kien_tiem_lai": "Khi bilirubin về ngưỡng an toàn",
+        "nguon": "QĐ 1575/QĐ-BYT (bản đăng lại bacgiang.gov.vn)",
+        "can_kiem_chung": true
+      }
+    ]
+  },
+
+  "quy_tac_khoang_cach": {
+    "mo_ta": "Quy tắc xung đột / khoảng cách tối thiểu giữa các mũi tiêm. Đây là phần Agent hay sai nhất - phải tra bảng, không được tự suy luận.",
+    "quy_tac": [
+      {
+        "ma": "KC_01",
+        "tinh_huong": "Hai liều của CÙNG MỘT loại vắc xin",
+        "khoang_cach_toi_thieu_tuan": 4,
+        "co_the_tiem_cung_ngay": false,
+        "ghi_chu": "Trừ khi phác đồ nhà sản xuất quy định khác (ví dụ VNNB Jevax mũi 2 cách mũi 1 chỉ 1-2 tuần).",
+        "nguon": "hpvc.vn / Vinmec"
+      },
+      {
+        "ma": "KC_02",
+        "tinh_huong": "Hai vắc xin SỐNG GIẢM ĐỘC LỰC dạng TIÊM, khác loại (sởi, MMR, thủy đậu, VNNB Imojev, sốt vàng)",
+        "khoang_cach_toi_thieu_tuan": 4,
+        "co_the_tiem_cung_ngay": true,
+        "ghi_chu": "HOẶC tiêm cùng một buổi ở HAI VỊ TRÍ KHÁC NHAU, HOẶC cách nhau tối thiểu 4 tuần. Không được tiêm cách nhau 1-3 tuần.",
+        "nguon": "hpvc.vn / Vinmec"
+      },
+      {
+        "ma": "KC_03",
+        "tinh_huong": "Hai vắc xin BẤT HOẠT khác loại",
+        "khoang_cach_toi_thieu_tuan": 0,
+        "co_the_tiem_cung_ngay": true,
+        "ghi_chu": "Không cần khoảng cách tối thiểu.",
+        "nguon": "hpvc.vn / Vinmec"
+      },
+      {
+        "ma": "KC_04",
+        "tinh_huong": "Một vắc xin SỐNG + một vắc xin BẤT HOẠT",
+        "khoang_cach_toi_thieu_tuan": 0,
+        "co_the_tiem_cung_ngay": true,
+        "ghi_chu": "Không cần khoảng cách tối thiểu.",
+        "nguon": "hpvc.vn / Vinmec"
+      },
+      {
+        "ma": "KC_05",
+        "tinh_huong": "Vắc xin sống UỐNG (OPV, Rota) với vắc xin sống dạng tiêm",
+        "khoang_cach_toi_thieu_tuan": 0,
+        "co_the_tiem_cung_ngay": true,
+        "ghi_chu": "Quy tắc 4 tuần chỉ áp dụng cho vắc xin sống dạng TIÊM.",
+        "nguon": "hpvc.vn",
+        "can_kiem_chung": true
+      },
+      {
+        "ma": "KC_06",
+        "tinh_huong": "Sau khi dùng immunoglobulin / truyền máu / chế phẩm máu",
+        "khoang_cach_toi_thieu_tuan": 12,
+        "co_the_tiem_cung_ngay": false,
+        "pham_vi": "Chỉ áp dụng cho vắc xin SỐNG. Vắc xin bất hoạt không bị ảnh hưởng.",
+        "ghi_chu": "Tương đương 3 tháng. Trừ kháng huyết thanh viêm gan B.",
+        "nguon": "QĐ 1575/QĐ-BYT + Vinmec"
+      },
+      {
+        "ma": "KC_07",
+        "tinh_huong": "Trẻ tiêm trễ lịch / bỏ lỡ mũi",
+        "khoang_cach_toi_thieu_tuan": null,
+        "ghi_chu": "KHÔNG tiêm lại từ đầu. Chỉ tiêm tiếp các liều còn thiếu, bất kể trễ bao lâu, miễn là tôn trọng khoảng cách tối thiểu giữa các liều.",
+        "nguon": "hpvc.vn"
+      }
+    ],
+    "cap_vaccine_khong_nen_tiem_cung": [
+      {
+        "vaccine_a": "MMR",
+        "vaccine_b": "Thuy_dau",
+        "loai_xung_dot": "song_tiem_vs_song_tiem",
+        "xu_ly": "Tiêm cùng buổi ở 2 vị trí khác nhau, HOẶC cách tối thiểu 4 tuần",
+        "muc_do": "canh_bao"
+      },
+      {
+        "vaccine_a": "MMR",
+        "vaccine_b": "VNNB_song",
+        "loai_xung_dot": "song_tiem_vs_song_tiem",
+        "xu_ly": "Tiêm cùng buổi ở 2 vị trí khác nhau, HOẶC cách tối thiểu 4 tuần",
+        "muc_do": "canh_bao"
+      },
+      {
+        "vaccine_a": "Soi",
+        "vaccine_b": "Thuy_dau",
+        "loai_xung_dot": "song_tiem_vs_song_tiem",
+        "xu_ly": "Tiêm cùng buổi ở 2 vị trí khác nhau, HOẶC cách tối thiểu 4 tuần",
+        "muc_do": "canh_bao"
+      },
+      {
+        "vaccine_a": "MR",
+        "vaccine_b": "MMR",
+        "loai_xung_dot": "trung_lap_thanh_phan",
+        "xu_ly": "Trùng thành phần sởi + rubella. Chọn MỘT trong hai, không tiêm cả hai như hai mũi độc lập.",
+        "muc_do": "chan"
+      },
+      {
+        "vaccine_a": "DPT_VGB_Hib",
+        "vaccine_b": "6in1",
+        "loai_xung_dot": "trung_lap_thanh_phan",
+        "xu_ly": "5in1 (TCMR) và 6in1 (dịch vụ) trùng bạch hầu, ho gà, uốn ván, Hib, viêm gan B. Chọn MỘT phác đồ, không dùng song song.",
+        "muc_do": "chan"
+      },
+      {
+        "vaccine_a": "OPV",
+        "vaccine_b": "6in1",
+        "loai_xung_dot": "trung_lap_thanh_phan",
+        "xu_ly": "6in1 đã chứa thành phần bại liệt bất hoạt (IPV). Trẻ theo phác đồ 6in1 không cần uống OPV theo lịch TCMR.",
+        "muc_do": "canh_bao"
+      },
+      {
+        "vaccine_a": "VNNB",
+        "vaccine_b": "VNNB_song",
+        "loai_xung_dot": "trung_lap_thanh_phan",
+        "xu_ly": "Jevax (bất hoạt) và Imojev (sống) cùng phòng viêm não Nhật Bản. Chọn MỘT phác đồ.",
+        "muc_do": "chan"
+      }
+    ]
+  }
+}

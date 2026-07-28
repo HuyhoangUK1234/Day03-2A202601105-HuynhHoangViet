@@ -1,0 +1,569 @@
+{
+  "meta": {
+    "ten_bo_du_lieu": "Lịch tiêm chủng trẻ em Việt Nam (0 - 12 tuổi)",
+    "phien_ban": "2026.07",
+    "ngay_crawl": "2026-07-28",
+    "can_cu_phap_ly": [
+      {
+        "so_hieu": "Thông tư 52/2025/TT-BYT",
+        "ngay_ban_hanh": "2025-12-31",
+        "hieu_luc": "2026-02-15",
+        "noi_dung": "Danh mục bệnh truyền nhiễm, đối tượng và phạm vi phải sử dụng vắc xin, sinh phẩm y tế bắt buộc. Thay thế Thông tư 10/2024/TT-BYT.",
+        "nguoi_ky": "Nguyễn Thị Liên Hương",
+        "url": "https://tiemchungmorong.vn/document/thong-tu-52-2025-tt-byt-ngay-31-12-2025-cua-bo-y-te-ban-hanh-danh-muc-benh-truyen-nhiem-doi-tuong-va-pham-vi-phai-su-dung-vac-xin-sinh-pham-y-te-bat-buoc"
+      },
+      {
+        "so_hieu": "Thông tư 13/2026/TT-BYT",
+        "hieu_luc": "2026-07-01",
+        "noi_dung": "Bổ sung vắc xin HPV vào danh mục tiêm chủng bắt buộc trong Chương trình TCMR (mở rộng danh mục từ 10 lên 14 mũi bắt buộc theo báo chí đưa tin).",
+        "can_kiem_chung": true
+      },
+      {
+        "so_hieu": "Nghị quyết 104/NQ-CP",
+        "noi_dung": "Lộ trình tăng số lượng vắc xin trong TCMR - vắc xin phế cầu (PCV) triển khai theo lộ trình riêng, thí điểm 5 tỉnh/thành 2025, mở rộng toàn quốc tới 2030."
+      }
+    ],
+    "disclaimer": "DỮ LIỆU THAM KHẢO - KHÔNG THAY THẾ CHỈ ĐỊNH CỦA BÁC SĨ. Mọi mũi tiêm phải qua khám sàng lọc trước tiêm chủng theo Quyết định 1575/QĐ-BYT. Agent chỉ được TRA CỨU và TRÍCH DẪN bảng này, không được tự suy luận ra phác đồ mới.",
+    "luu_y_du_lieu": "Snapshot thủ công, đối chiếu chéo nhiều nguồn (xem config/data_sources.md). Phụ lục gốc của Thông tư 52/2025 dạng PDF/ảnh, không parse trực tiếp được (thuvienphapluat.vn trả HTTP 403, hcdc.vn đăng bảng dưới dạng ảnh). Các bản ghi có cờ can_kiem_chung=true cần đối chiếu lại văn bản gốc trước khi dùng ngoài phạm vi bài Lab.",
+    "tong_so_ban_ghi": 34
+  },
+
+  "danh_muc_vaccine": {
+    "VGB_so_sinh": {
+      "ten": "Vắc xin viêm gan B đơn giá (sơ sinh)",
+      "ten_thuong_mai": ["Gene-Hbvax", "Heberbiovac HB"],
+      "loai_vaccine": "tai_to_hop",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Viêm gan B"],
+      "chuong_trinh": "TCMR"
+    },
+    "BCG": {
+      "ten": "Vắc xin BCG",
+      "ten_thuong_mai": ["BCG (IVAC)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_trong_da",
+      "phong_benh": ["Lao"],
+      "chuong_trinh": "TCMR"
+    },
+    "DPT_VGB_Hib": {
+      "ten": "Vắc xin phối hợp 5 trong 1",
+      "ten_thuong_mai": ["SII (DTwP-HepB-Hib)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Bạch hầu", "Ho gà", "Uốn ván", "Viêm gan B", "Haemophilus influenzae týp b"],
+      "chuong_trinh": "TCMR"
+    },
+    "OPV": {
+      "ten": "Vắc xin bại liệt uống",
+      "ten_thuong_mai": ["bOPV"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "uong",
+      "phong_benh": ["Bại liệt"],
+      "chuong_trinh": "TCMR"
+    },
+    "IPV": {
+      "ten": "Vắc xin bại liệt bất hoạt",
+      "ten_thuong_mai": ["IPV (Imovax Polio)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Bại liệt"],
+      "chuong_trinh": "TCMR"
+    },
+    "Soi": {
+      "ten": "Vắc xin sởi đơn",
+      "ten_thuong_mai": ["MVVac (POLYVAC)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Sởi"],
+      "chuong_trinh": "TCMR"
+    },
+    "MR": {
+      "ten": "Vắc xin sởi - rubella",
+      "ten_thuong_mai": ["MRVAC (POLYVAC)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Sởi", "Rubella"],
+      "chuong_trinh": "TCMR"
+    },
+    "DPT": {
+      "ten": "Vắc xin bạch hầu - ho gà - uốn ván (mũi nhắc)",
+      "ten_thuong_mai": ["DPT (IVAC)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Bạch hầu", "Ho gà", "Uốn ván"],
+      "chuong_trinh": "TCMR"
+    },
+    "VNNB": {
+      "ten": "Vắc xin viêm não Nhật Bản bất hoạt",
+      "ten_thuong_mai": ["Jevax (VABIOTECH)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Viêm não Nhật Bản B"],
+      "chuong_trinh": "TCMR"
+    },
+    "Rota": {
+      "ten": "Vắc xin Rota virus",
+      "ten_thuong_mai": ["Rotavin-M1", "Rotarix", "Rotateq"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "uong",
+      "phong_benh": ["Tiêu chảy cấp do Rota virus"],
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Triển khai toàn quốc trong TCMR từ 2026 (2 liều miễn phí)."
+    },
+    "PCV": {
+      "ten": "Vắc xin phế cầu cộng hợp",
+      "ten_thuong_mai": ["Synflorix (PCV10)", "Prevenar 13 (PCV13)"],
+      "loai_vaccine": "cong_hop",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Viêm phổi do phế cầu", "Viêm màng não do phế cầu", "Nhiễm khuẩn huyết", "Viêm tai giữa"],
+      "chuong_trinh": "TCMR_lo_trinh",
+      "ghi_chu": "Theo Nghị quyết 104/NQ-CP: thí điểm 5 tỉnh 2025, mở rộng toàn quốc tới 2030. Ngoài vùng thí điểm vẫn là vắc xin dịch vụ."
+    },
+    "HPV": {
+      "ten": "Vắc xin HPV",
+      "ten_thuong_mai": ["Gardasil", "Gardasil 9", "Cervarix"],
+      "loai_vaccine": "tai_to_hop",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Ung thư cổ tử cung", "Bệnh do HPV"],
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Vào TCMR từ 01/7/2026 theo Thông tư 13/2026/TT-BYT, miễn phí cho trẻ em gái 11 tuổi."
+    },
+
+    "6in1": {
+      "ten": "Vắc xin phối hợp 6 trong 1",
+      "ten_thuong_mai": ["Infanrix Hexa (Bỉ)", "Hexaxim (Pháp)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Bạch hầu", "Ho gà", "Uốn ván", "Bại liệt", "Viêm gan B", "Haemophilus influenzae týp b"],
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Thay thế 5 trong 1 + OPV của TCMR. Không tiêm trùng lặp cả hai."
+    },
+    "MMR": {
+      "ten": "Vắc xin sởi - quai bị - rubella",
+      "ten_thuong_mai": ["Priorix (Bỉ)", "MMR II (Mỹ)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Sởi", "Quai bị", "Rubella"],
+      "chuong_trinh": "dich_vu"
+    },
+    "Thuy_dau": {
+      "ten": "Vắc xin thủy đậu",
+      "ten_thuong_mai": ["Varilrix (Bỉ)", "Varivax (Mỹ)", "Varicella (Hàn Quốc)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Thủy đậu"],
+      "chuong_trinh": "dich_vu"
+    },
+    "Cum": {
+      "ten": "Vắc xin cúm mùa",
+      "ten_thuong_mai": ["Vaxigrip Tetra", "Influvac Tetra", "GC Flu"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Cúm mùa"],
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Nhắc lại hằng năm."
+    },
+    "NMC_BC": {
+      "ten": "Vắc xin não mô cầu nhóm B, C",
+      "ten_thuong_mai": ["VA-Mengoc-BC (Cuba)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Viêm màng não do não mô cầu nhóm B, C"],
+      "chuong_trinh": "dich_vu"
+    },
+    "NMC_ACYW": {
+      "ten": "Vắc xin não mô cầu nhóm A, C, Y, W-135",
+      "ten_thuong_mai": ["Menactra (Mỹ)"],
+      "loai_vaccine": "cong_hop",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Viêm màng não do não mô cầu nhóm A, C, Y, W-135"],
+      "chuong_trinh": "dich_vu"
+    },
+    "VNNB_song": {
+      "ten": "Vắc xin viêm não Nhật Bản sống giảm độc lực tái tổ hợp",
+      "ten_thuong_mai": ["Imojev (Thái Lan)"],
+      "loai_vaccine": "song_giam_doc_luc",
+      "duong_dung": "tiem_duoi_da",
+      "phong_benh": ["Viêm não Nhật Bản"],
+      "chuong_trinh": "dich_vu"
+    },
+    "VGA": {
+      "ten": "Vắc xin viêm gan A",
+      "ten_thuong_mai": ["Havax (VN)", "Avaxim 80U (Pháp)"],
+      "loai_vaccine": "bat_hoat",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Viêm gan A"],
+      "chuong_trinh": "dich_vu"
+    },
+    "RSV_mAb": {
+      "ten": "Kháng thể đơn dòng dự phòng RSV",
+      "ten_thuong_mai": ["Beyfortus (Nirsevimab)"],
+      "loai_vaccine": "khang_the_don_dong",
+      "duong_dung": "tiem_bap",
+      "phong_benh": ["Nhiễm virus hợp bào hô hấp (RSV)"],
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Không phải vắc xin - là kháng thể thụ động. Không tính vào lịch tiêm chủng bắt buộc.",
+      "can_kiem_chung": true
+    }
+  },
+
+  "lich_tiem": [
+    {
+      "tuoi_thang": 0,
+      "tuoi_hien_thi": "Sơ sinh - trong 24 giờ đầu sau sinh",
+      "vaccine_id": "VGB_so_sinh",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Tiêm càng sớm càng tốt trong 24 giờ đầu. Mẹ HBsAg(+) cần phối hợp thêm HBIG.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 0,
+      "tuoi_hien_thi": "Sơ sinh - trong vòng 1 tháng sau sinh",
+      "vaccine_id": "BCG",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Tiêm 1 lần duy nhất, không có mũi nhắc.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 0,
+      "tuoi_hien_thi": "Sơ sinh",
+      "vaccine_id": "RSV_mAb",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Dự phòng thụ động RSV cho trẻ sơ sinh, theo mùa dịch. Không bắt buộc.",
+      "nguon": "VNVC 2026",
+      "can_kiem_chung": true
+    },
+
+    {
+      "tuoi_thang": 2,
+      "tuoi_hien_thi": "2 tháng tuổi",
+      "vaccine_id": "DPT_VGB_Hib",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Mốc khởi động các mũi cơ bản.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 2,
+      "tuoi_hien_thi": "2 tháng tuổi",
+      "vaccine_id": "OPV",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 2,
+      "tuoi_hien_thi": "2 tháng tuổi",
+      "vaccine_id": "Rota",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Uống. Liều 2 cách liều 1 tối thiểu 1 tháng.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 2,
+      "tuoi_hien_thi": "2 tháng tuổi",
+      "vaccine_id": "PCV",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "TCMR_lo_trinh",
+      "ghi_chu": "Bắt buộc trong vùng đã triển khai; ngoài vùng thí điểm là dịch vụ.",
+      "nguon": "TT 52/2025/TT-BYT + NQ 104/NQ-CP"
+    },
+    {
+      "tuoi_thang": 2,
+      "tuoi_hien_thi": "2 tháng tuổi",
+      "vaccine_id": "6in1",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Phương án thay thế 5in1 + OPV. Chọn MỘT trong hai phác đồ, không dùng song song.",
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 3,
+      "tuoi_hien_thi": "3 tháng tuổi",
+      "vaccine_id": "DPT_VGB_Hib",
+      "mui": 2,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 3,
+      "tuoi_hien_thi": "3 tháng tuổi",
+      "vaccine_id": "OPV",
+      "mui": 2,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 3,
+      "tuoi_hien_thi": "3 tháng tuổi",
+      "vaccine_id": "Rota",
+      "mui": 2,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "ghi_chu": "Rotarix 2 liều; Rotateq 3 liều (liều 3 lúc 4 tháng).",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 3,
+      "tuoi_hien_thi": "3 tháng tuổi",
+      "vaccine_id": "6in1",
+      "mui": 2,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 3,
+      "tuoi_hien_thi": "3 tháng tuổi",
+      "vaccine_id": "PCV",
+      "mui": 2,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "ghi_chu": "Phác đồ dịch vụ 2-3-4 tháng. Phác đồ TCMR ghi mũi 2 cách mũi 1 hai tháng (lúc 4 tháng).",
+      "nguon": "VNVC / Long Châu",
+      "can_kiem_chung": true
+    },
+
+    {
+      "tuoi_thang": 4,
+      "tuoi_hien_thi": "4 tháng tuổi",
+      "vaccine_id": "DPT_VGB_Hib",
+      "mui": 3,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 4,
+      "tuoi_hien_thi": "4 tháng tuổi",
+      "vaccine_id": "OPV",
+      "mui": 3,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 4,
+      "tuoi_hien_thi": "4 tháng tuổi",
+      "vaccine_id": "PCV",
+      "mui": 2,
+      "bat_buoc": false,
+      "chuong_trinh": "TCMR_lo_trinh",
+      "ghi_chu": "Theo TT 52/2025: mũi 2 cách mũi 1 tối thiểu 2 tháng.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 4,
+      "tuoi_hien_thi": "4 tháng tuổi",
+      "vaccine_id": "6in1",
+      "mui": 3,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 4,
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 5,
+      "tuoi_hien_thi": "5 tháng tuổi",
+      "vaccine_id": "IPV",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Mũi bại liệt tiêm bổ sung sau 3 liều OPV.",
+      "nguon": "Bệnh viện Nhi Đồng Thành Phố / TCMR",
+      "can_kiem_chung": true
+    },
+
+    {
+      "tuoi_thang": 6,
+      "tuoi_hien_thi": "Từ 6 tháng tuổi",
+      "vaccine_id": "Cum",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Lần đầu tiêm 2 mũi cách nhau 1 tháng, sau đó nhắc lại hằng năm.",
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 6,
+      "tuoi_hien_thi": "Từ 6 tháng tuổi",
+      "vaccine_id": "NMC_BC",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "2 mũi cách nhau tối thiểu 6-8 tuần.",
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 9,
+      "tuoi_hien_thi": "9 tháng tuổi",
+      "vaccine_id": "Soi",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Mũi sởi đầu tiên trong TCMR.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 9,
+      "tuoi_hien_thi": "Từ 9 tháng tuổi",
+      "vaccine_id": "MMR",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Priorix tiêm được từ 9 tháng. Thay thế mũi sởi đơn TCMR nếu gia đình chọn dịch vụ.",
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 9,
+      "tuoi_hien_thi": "Từ 9 tháng tuổi",
+      "vaccine_id": "VNNB_song",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Imojev: mũi 2 cách mũi 1 từ 12-24 tháng.",
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 9,
+      "tuoi_hien_thi": "Từ 9 tháng tuổi",
+      "vaccine_id": "NMC_ACYW",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 9,
+      "tuoi_hien_thi": "Từ 9 tháng tuổi",
+      "vaccine_id": "Thuy_dau",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Varilrix từ 9 tháng; Varivax/Varicella từ 12 tháng.",
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 12,
+      "tuoi_hien_thi": "12 tháng tuổi (1 tuổi)",
+      "vaccine_id": "VNNB",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Jevax mũi 1 khi trẻ đủ 1 tuổi.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 12,
+      "tuoi_hien_thi": "12 tháng tuổi + 1-2 tuần",
+      "vaccine_id": "VNNB",
+      "mui": 2,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 1,
+      "ghi_chu": "Mũi 2 cách mũi 1 từ 1 đến 2 tuần.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 12,
+      "tuoi_hien_thi": "Từ 12 tháng tuổi",
+      "vaccine_id": "VGA",
+      "mui": 1,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "2 mũi cách nhau 6-12 tháng.",
+      "nguon": "VNVC / Long Châu"
+    },
+    {
+      "tuoi_thang": 12,
+      "tuoi_hien_thi": "12-15 tháng tuổi",
+      "vaccine_id": "PCV",
+      "mui": 3,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Mũi nhắc phác đồ dịch vụ.",
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 18,
+      "tuoi_hien_thi": "18 tháng tuổi",
+      "vaccine_id": "DPT",
+      "mui": 4,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Mũi nhắc bạch hầu - ho gà - uốn ván.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 18,
+      "tuoi_hien_thi": "18 tháng tuổi",
+      "vaccine_id": "MR",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "ghi_chu": "Mũi sởi - rubella. Là mũi sởi thứ 2 trong TCMR.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+    {
+      "tuoi_thang": 18,
+      "tuoi_hien_thi": "16-18 tháng tuổi",
+      "vaccine_id": "6in1",
+      "mui": 4,
+      "bat_buoc": false,
+      "chuong_trinh": "dich_vu",
+      "ghi_chu": "Mũi nhắc phác đồ dịch vụ.",
+      "nguon": "VNVC / Long Châu"
+    },
+
+    {
+      "tuoi_thang": 24,
+      "tuoi_hien_thi": "24 tháng tuổi (2 tuổi)",
+      "vaccine_id": "VNNB",
+      "mui": 3,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "khoang_cach_toi_thieu_tu_mui_truoc_tuan": 52,
+      "ghi_chu": "Mũi 3 cách mũi 2 một năm.",
+      "nguon": "TT 52/2025/TT-BYT"
+    },
+
+    {
+      "tuoi_thang": 132,
+      "tuoi_hien_thi": "11 tuổi (trẻ em gái)",
+      "vaccine_id": "HPV",
+      "mui": 1,
+      "bat_buoc": true,
+      "chuong_trinh": "TCMR",
+      "gioi_tinh": "nu",
+      "ghi_chu": "Miễn phí trong TCMR từ 01/7/2026 theo Thông tư 13/2026/TT-BYT. Phác đồ 2 mũi cho nhóm dưới 15 tuổi.",
+      "nguon": "TT 13/2026/TT-BYT",
+      "can_kiem_chung": true
+    }
+  ]
+}
