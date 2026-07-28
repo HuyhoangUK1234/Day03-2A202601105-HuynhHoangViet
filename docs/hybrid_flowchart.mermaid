@@ -1,0 +1,33 @@
+flowchart TD
+    A["Câu hỏi từ phụ huynh"] --> B{"Chỉ cần kiến thức phổ thông,<br/>không cần dữ liệu riêng của trẻ?"}
+
+    B -->|Có| C["CHATBOT PATH<br/>1 LLM call, không gọi tool<br/>VD: Vắc xin thủy đậu tiêm mấy lần?"]
+
+    B -->|Không - cần dữ liệu cụ thể| D{"Đã có ngày sinh /<br/>tuổi của trẻ chưa?"}
+
+    D -->|Chưa có| E["Agent hỏi lại thông tin thiếu<br/>(không tự đoán tuổi)"]
+
+    D -->|Đã có| F["Tool: calculate_age_months"]
+    F --> G["Tool: lookup_vaccine_schedule"]
+
+    G --> H{"Có nhắc bệnh nền /<br/>vừa ốm / dị ứng?"}
+    H -->|Có| I["Tool: check_contraindications<br/>Chỉ liệt kê cảnh báo,<br/>không tự kết luận tiêm được hay không"]
+    H -->|Không| J{"Hỏi về 2 vắc xin<br/>cùng lúc / xung đột?"}
+
+    I --> J
+    J -->|Có| K["Tool: check_vaccine_conflict"]
+    J -->|Không| L{"Cần tìm cơ sở /<br/>kiểm tra tồn kho?"}
+
+    K --> L
+    L -->|Có| M["Tool: find_nearest_pharmacy"]
+    M --> N["Tool: check_stock"]
+
+    N --> O{"Người dùng xác nhận<br/>muốn ĐẶT LỊCH?"}
+    L -->|Không| P["Final Answer<br/>(tổng hợp Observation + trích nguồn)"]
+    O -->|Có, rõ ràng| Q["Tool: book_appointment<br/>WRITE - chỉ gọi khi đã xác nhận ý định"]
+    O -->|Chưa rõ / chỉ hỏi thông tin| P
+
+    Q --> P
+    C --> R(("Kết thúc"))
+    E --> R
+    P --> R
