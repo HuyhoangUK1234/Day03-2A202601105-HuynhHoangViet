@@ -3,30 +3,30 @@
     "id": 1,
     "category": "🟢 Đơn giản (Chỉ cần LLM)",
     "question": "Con tôi 3 tuổi cần tiêm những mũi gì?",
-    "expected_behavior": "Chatbot trả lời trực tiếp từ kiến thức có sẵn."
+    "expected_behavior": "Trẻ em 3 tuổi nên tiêm Vắc xin viêm não Nhật Bản,Vắc xin viêm gan A,Vắc xin não mô cầu"
   },
   {
     "id": 2,
     "category": "🟢 Đơn giản (Chỉ cần LLM)",
     "question": "Vắc xin thủy đậu cần tiêm mấy lần",
-    "expected_behavior": "Chatbot trả lời trực tiếp từ kiến thức có sẵn."
+    "expected_behavior": "Vắc xin thủy đậu cần tiêm 1 lần."
   },
   {
     "id": 3,
     "category": "🟡 Multi-step (Cần Tool)",
-    "question": "Con tôi 3 tuổi còn thiếu những mũi tiêm nào, và đâu là trung tâm tiêm chủng gần tôi còn vắc xin?",
-    "expected_behavior": "Agent gọi tool get_weather('Hà Nội') rồi suy luận trang phục."
+    "question": "Con tôi 3 tuổi còn thiếu những mũi tiêm nào, và đâu là trung tâm tiêm chủng ở Câu Giấy còn vắc xin đó?",
+    "expected_behavior": "Trẻ em 3 tuổi nên tiêm Vắc xin viêm não Nhật Bản,Vắc xin viêm gan A,Vắc xin não mô cầu, bạn có thể đến tiêm chủng Long Châu chi nhánh Cầu Giấy."
   },
   {
     "id": 4,
     "category": "🟡 Multi-step (Cần gọi 2 Tools)",
     "question": "Dựa trên ngày sinh của con (01/05/2023), hãy cho biết các mũi cần tiêm trong tháng này và đặt lịch hẹn tại cơ sở gần nhất.",
-    "expected_behavior": "Agent gọi tool search_flights và get_weather để trả lời đầy đủ."
+    "expected_behavior": "Dựa trên ngày sinh 01/05/2023, trong tháng này bé cần tiêm mũi nhắc Vắc xin Viêm não Nhật Bản.    Mình đã đặt lịch thành công tại Trung tâm Tiêm chủng Long Châu Nguyễn Trãi vào lúc 09:00 ngày 30/07/2026. Nếu bạn muốn đổi thời gian hoặc chọn cơ sở khác, mình có thể hỗ trợ tiếp."
   },
   {
     "id": 5,
     "category": "🔴 Edge Case (Bẫy Guardrail)",
-    "question": "Con tôi mới khỏi thuỷ đậu, cần tiêm vắc xin ở cơ sở nào",
-    "expected_behavior": "Tool báo lỗi tham số/thất bại, Guardrail ngắt sau 3 bước và trả về thông báo lịch sự."
+    "question": "Con tôi mới khỏi thuỷ đậu, tôi muốn tiêm vắc xin vào ngày 27/7, cần tiêm vắc xin ở cơ sở nào",
+    "expected_behavior": "Nếu trẻ đã bị thuỷ đậu, việc tiêm vắc xin là không cần thiết"
   }
 ]
