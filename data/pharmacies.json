@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "ten_bo_du_lieu": "Chi nhánh Trung tâm Tiêm chủng Long Châu & tồn kho vắc xin",
+    "phien_ban": "2026.07",
+    "ngay_tao": "2026-07-28",
+    "CANH_BAO_DU_LIEU_GIA": "⚠️ ĐÂY LÀ DỮ LIỆU MOCK PHỤC VỤ BÀI LAB. Tồn kho vắc xin theo từng chi nhánh Long Châu KHÔNG được công khai qua API, nên phần ton_kho và lich_trong dưới đây là bịa để demo. Địa chỉ chi nhánh mang tính minh họa. Trước khi dùng thật phải thay bằng Google Places API hoặc endpoint chính thức của Long Châu.",
+    "nguon_that_neu_lam_that": [
+      "Google Places API - Text Search 'Nhà thuốc Long Châu' + Nearby Search theo lat/lng",
+      "https://nhathuoclongchau.com.vn/he-thong-nha-thuoc (mở DevTools > Network > XHR để lấy endpoint JSON)",
+      "https://tiemchunglongchau.com.vn"
+    ]
+  },
+
+  "chi_nhanh": [
+    {
+      "store_id": "LC_HN_012",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Cầu Giấy",
+      "dia_chi": "227 Cầu Giấy, phường Dịch Vọng, quận Cầu Giấy, Hà Nội",
+      "quan": "Cầu Giấy",
+      "thanh_pho": "Hà Nội",
+      "lat": 21.0333,
+      "lng": 105.7906,
+      "gio_mo_cua": "07:30 - 20:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HN_027",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Nguyễn Trãi",
+      "dia_chi": "184 Nguyễn Trãi, phường Thượng Đình, quận Thanh Xuân, Hà Nội",
+      "quan": "Thanh Xuân",
+      "thanh_pho": "Hà Nội",
+      "lat": 20.9955,
+      "lng": 105.8082,
+      "gio_mo_cua": "07:30 - 20:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HN_035",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Xuân Thủy",
+      "dia_chi": "89 Xuân Thủy, phường Dịch Vọng Hậu, quận Cầu Giấy, Hà Nội",
+      "quan": "Cầu Giấy",
+      "thanh_pho": "Hà Nội",
+      "lat": 21.0368,
+      "lng": 105.7829,
+      "gio_mo_cua": "08:00 - 21:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HN_041",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Ba Đình",
+      "dia_chi": "56 Kim Mã, phường Kim Mã, quận Ba Đình, Hà Nội",
+      "quan": "Ba Đình",
+      "thanh_pho": "Hà Nội",
+      "lat": 21.0313,
+      "lng": 105.8199,
+      "gio_mo_cua": "07:30 - 20:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HN_058",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Đống Đa",
+      "dia_chi": "312 Tây Sơn, phường Ngã Tư Sở, quận Đống Đa, Hà Nội",
+      "quan": "Đống Đa",
+      "thanh_pho": "Hà Nội",
+      "lat": 21.0044,
+      "lng": 105.8221,
+      "gio_mo_cua": "08:00 - 20:30 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HCM_101",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Quận 1",
+      "dia_chi": "125 Nguyễn Thị Minh Khai, phường Bến Thành, Quận 1, TP.HCM",
+      "quan": "Quận 1",
+      "thanh_pho": "TP.HCM",
+      "lat": 10.7729,
+      "lng": 106.6938,
+      "gio_mo_cua": "07:00 - 21:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_HCM_118",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Gò Vấp",
+      "dia_chi": "455 Quang Trung, phường 10, quận Gò Vấp, TP.HCM",
+      "quan": "Gò Vấp",
+      "thanh_pho": "TP.HCM",
+      "lat": 10.8391,
+      "lng": 106.6656,
+      "gio_mo_cua": "07:30 - 20:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    },
+    {
+      "store_id": "LC_DN_201",
+      "ten": "Trung tâm Tiêm chủng Long Châu - Hải Châu",
+      "dia_chi": "78 Nguyễn Văn Linh, phường Nam Dương, quận Hải Châu, Đà Nẵng",
+      "quan": "Hải Châu",
+      "thanh_pho": "Đà Nẵng",
+      "lat": 16.0603,
+      "lng": 108.2172,
+      "gio_mo_cua": "07:30 - 20:00 (T2 - CN)",
+      "hotline": "1800 6928",
+      "co_phong_tiem": true
+    }
+  ],
+
+  "ton_kho": {
+    "LC_HN_012": {
+      "6in1": { "con_hang": true, "so_luong": 24, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 15, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 30, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 18, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": false, "so_luong": 0, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 12, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 40, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 22, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 9, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 14, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 55, "gia_vnd": 356000 }
+    },
+    "LC_HN_027": {
+      "6in1": { "con_hang": true, "so_luong": 11, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": false, "so_luong": 0, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 17, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 25, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 8, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 20, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 33, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 16, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 6, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": false, "so_luong": 0, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 41, "gia_vnd": 356000 }
+    },
+    "LC_HN_035": {
+      "6in1": { "con_hang": true, "so_luong": 7, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 21, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": false, "so_luong": 0, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 13, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 19, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": false, "so_luong": 0, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 28, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 10, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 4, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 12, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 60, "gia_vnd": 356000 }
+    },
+    "LC_HN_041": {
+      "6in1": { "con_hang": true, "so_luong": 16, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 9, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 23, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 31, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 5, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 8, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 45, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 27, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": false, "so_luong": 0, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 18, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 38, "gia_vnd": 356000 }
+    },
+    "LC_HN_058": {
+      "6in1": { "con_hang": true, "so_luong": 13, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 11, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 14, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 20, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 3, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 15, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 36, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 8, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 7, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 21, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 49, "gia_vnd": 356000 }
+    },
+    "LC_HCM_101": {
+      "6in1": { "con_hang": true, "so_luong": 28, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 19, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 26, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 22, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 17, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 24, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 50, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 30, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 12, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 25, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 70, "gia_vnd": 356000 }
+    },
+    "LC_HCM_118": {
+      "6in1": { "con_hang": true, "so_luong": 9, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 6, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 11, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 14, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": false, "so_luong": 0, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 10, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 29, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 13, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 5, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 16, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 44, "gia_vnd": 356000 }
+    },
+    "LC_DN_201": {
+      "6in1": { "con_hang": true, "so_luong": 12, "gia_vnd": 1065000 },
+      "PCV": { "con_hang": true, "so_luong": 8, "gia_vnd": 1280000 },
+      "Rota": { "con_hang": true, "so_luong": 15, "gia_vnd": 830000 },
+      "MMR": { "con_hang": true, "so_luong": 11, "gia_vnd": 445000 },
+      "Thuy_dau": { "con_hang": true, "so_luong": 6, "gia_vnd": 1085000 },
+      "VNNB_song": { "con_hang": true, "so_luong": 9, "gia_vnd": 1015000 },
+      "VNNB": { "con_hang": true, "so_luong": 31, "gia_vnd": 215000 },
+      "VGA": { "con_hang": true, "so_luong": 14, "gia_vnd": 620000 },
+      "NMC_ACYW": { "con_hang": true, "so_luong": 3, "gia_vnd": 1350000 },
+      "NMC_BC": { "con_hang": true, "so_luong": 10, "gia_vnd": 380000 },
+      "Cum": { "con_hang": true, "so_luong": 35, "gia_vnd": 356000 }
+    }
+  },
+
+  "ghi_chu_vaccine_TCMR": "Các vắc xin thuộc Chương trình Tiêm chủng mở rộng (BCG, VGB sơ sinh, DPT_VGB_Hib, OPV, IPV, Soi, MR, DPT) được tiêm MIỄN PHÍ tại trạm y tế phường/xã, không bán tại Long Châu nên không có trong bảng tồn kho."
+}

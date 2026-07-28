@@ -3,8 +3,8 @@
 Nơi cấu hình System Prompt và Phanh An Toàn (Guardrails) cho AI.
 
 Chủ đề nhóm: TRỢ LÝ TRA CỨU LỊCH TIÊM CHỦNG TRẺ EM & TÌM NHÀ THUỐC LONG CHÂU
-Dữ liệu nền: config/vaccine_schedule.json, config/vaccine_contraindications.json,
-             config/vaccine_conditions.json (nguồn: config/data_sources.md)
+Dữ liệu nền (thư mục data/): vaccine_schedule.json, vaccine_contraindications.json,
+             vaccine_conditions.json, pharmacies.json (nguồn: data/data_sources.md)
 
 ⚠️ ĐÂY LÀ CHỦ ĐỀ Y TẾ CHO TRẺ EM. Guardrails trong file này là BẮT BUỘC,
 không phải tùy chọn. Agent chỉ được TRA CỨU và TRÍCH DẪN bảng dữ liệu,
@@ -33,6 +33,7 @@ THOUGHT_REGEX = re.compile(r"^\s*Thought\s*:\s*(.+)$", re.MULTILINE)
 # Danh sách tool mà Prompt đã khai báo với LLM.
 # Role 4 nên assert danh sách này khớp với AVAILABLE_TOOLS trong src/tools.py.
 EXPECTED_TOOLS = [
+    "calculate_age_months",
     "lookup_vaccine_schedule",
     "get_vaccine_info",
     "check_contraindications",
@@ -129,33 +130,41 @@ Bạn suy luận theo chuỗi Thought -> Action -> Observation và chỉ kết l
 
 === DANH SÁCH CÔNG CỤ ===
 
-1. lookup_vaccine_schedule[age_months]
-   Tra các mũi tiêm đến hạn theo tuổi của trẻ (đơn vị: THÁNG, số nguyên).
+1. calculate_age_months[birth_date]
+   Đổi NGÀY SINH của trẻ sang số tháng tuổi. Dùng khi người dùng cho ngày sinh
+   thay vì tuổi. Định dạng: dd/mm/yyyy hoặc yyyy-mm-dd.
+   Ví dụ: calculate_age_months[01/05/2023]
+
+2. lookup_vaccine_schedule[age_months]
+   Tra các mũi tiêm theo tuổi của trẻ (đơn vị: THÁNG, số nguyên).
+   Trả về: mũi đến hạn đúng mốc, các mũi lẽ ra đã tiêm trước đó, và mũi kế tiếp.
    Ví dụ: lookup_vaccine_schedule[2]
 
-2. get_vaccine_info[vaccine_id]
-   Tra chi tiết một vắc xin: tên thương mại, loại, đường dùng, phòng bệnh gì.
+3. get_vaccine_info[vaccine_id]
+   Tra chi tiết một vắc xin: tên thương mại, loại, đường dùng, phòng bệnh gì, số mũi.
    Ví dụ: get_vaccine_info[DPT_VGB_Hib]
 
-3. check_contraindications[keywords]
+4. check_contraindications[keywords]
    Tra chống chỉ định và trường hợp tạm hoãn theo tình trạng sức khỏe / bệnh nền của trẻ.
    Ví dụ: check_contraindications[tim bẩm sinh]
 
-4. check_vaccine_conflict[vaccine_a, vaccine_b]
+5. check_vaccine_conflict[vaccine_a, vaccine_b]
    Kiểm tra hai vắc xin có xung đột / cần khoảng cách tối thiểu bao lâu.
    Ví dụ: check_vaccine_conflict[MMR, Thuy_dau]
 
-5. find_nearest_pharmacy[address]
-   Tìm các chi nhánh Long Châu gần một địa chỉ.
+6. find_nearest_pharmacy[address]
+   Tìm các chi nhánh Long Châu gần một địa chỉ. Trả về store_id để dùng cho bước sau.
    Ví dụ: find_nearest_pharmacy[Cầu Giấy, Hà Nội]
 
-6. check_stock[store_id, vaccine_id]
-   Kiểm tra tồn kho một vắc xin tại một chi nhánh.
-   Ví dụ: check_stock[LC_HN_012, DPT_VGB_Hib]
+7. check_stock[store_id, vaccine_id]
+   Kiểm tra tồn kho tại một chi nhánh. Phải có store_id từ bước 6 trước.
+   ⚡ Cần xem NHIỀU vắc xin thì truyền vaccine_id = all để lấy TOÀN BỘ kho trong MỘT lần gọi.
+   Tuyệt đối không gọi lặp lại tool này cho từng vắc xin một - sẽ hết ngân sách vòng lặp.
+   Ví dụ: check_stock[LC_HN_012, all] hoặc check_stock[LC_HN_012, MMR]
 
-7. book_appointment[store_id, vaccine_id, datetime]
+8. book_appointment[store_id, vaccine_id, datetime]
    ĐẶT LỊCH TIÊM (hành động ghi dữ liệu thật).
-   Ví dụ: book_appointment[LC_HN_012, DPT_VGB_Hib, 2026-08-05 09:00]
+   Ví dụ: book_appointment[LC_HN_012, MMR, 2026-08-05 09:00]
 
 === ĐỊNH DẠNG BẮT BUỘC ===
 

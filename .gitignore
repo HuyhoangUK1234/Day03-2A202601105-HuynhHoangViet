@@ -5,3 +5,8 @@ __pycache__/
 .venv/
 env/
 venv/
+
+# Log chạy máy đọc - giữ lại logs/trace_report.md làm artifact nộp bài
+logs/*.jsonl
+logs/full_run.txt
+data/appointments.json
